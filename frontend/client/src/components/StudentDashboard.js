@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Logo from './Logo';
-import BookBlock from './BookBlock';
+import MyBooks from './MyBooks';
+import Marketplace from './Marketplace';
 
 const StudentDashboard = () => {
     const [dashboardSelect, setDashboardSelect] = useState('grey');
     const [viewText, setViewText] = useState('black');
     const [marketplace, setMarketplace] = useState('grey');
     const [help, setHelp] = useState('grey');
+    const [showMarketplace, setShowMarketplace] = useState(false);
 
     const changeSelectState = (comp) => {
         if (comp==='dashboard') {
@@ -19,11 +21,13 @@ const StudentDashboard = () => {
             setViewText('black');
             setMarketplace('grey');
             setHelp('grey');
+            setShowMarketplace(false);
         } else if (comp==='marketplace') {
             setDashboardSelect('grey');
             setViewText('grey');
             setMarketplace('black');
             setHelp('grey');
+            setShowMarketplace(true);
         } else {
             setDashboardSelect('grey');
             setViewText('grey');
@@ -60,9 +64,8 @@ const StudentDashboard = () => {
             <div style={{ width: '79.8vw', fontFamily: 'cursive'}}>
                 <h1 style={{paddingLeft: 20}}>Student Dashboard</h1>
                 <hr style={{ width: '100%'}}></hr>
-                <div style={{display: 'flex', width: '50vw', height: '50vh', backgroundColor: ''}}>
-                    
-                </div>
+                { showMarketplace ? <Marketplace /> : <MyBooks />}
+                
             </div>
         </div>
     );
