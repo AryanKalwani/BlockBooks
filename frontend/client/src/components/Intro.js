@@ -18,7 +18,11 @@ const Intro = () => {
                     borderColor: '#cdcdcd',
                     borderRadius: 60    
                 }}>
-                    Business Description 
+                    Textbooks are expensive for students.
+                    <br />
+                    Textbooks are followed by intellectual piracy for publishers.
+                    <br />
+                    We fix that by transforming textbooks into NFTs and allow students to freely trade them while guaranteeing royalties to publishers. 
                 </p>
             </div>  
             <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center', }}>
